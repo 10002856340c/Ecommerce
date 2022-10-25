@@ -1,7 +1,7 @@
 package com.deg.clientservice.service;
 
 import com.deg.clientservice.controller.Exceptions.ResourceNotFoundException;
-import com.deg.clientservice.model.Clientes;
+import com.deg.clientservice.model.clienteModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,22 +16,21 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
 
-//metodo para crear
-    public Clientes create (Clientes newClient){
+    public clienteModel create (clienteModel newClient){
         return this.clienteRepository.save(newClient);
     }
 
 //metodo para traer todos los datos
-    public List<Clientes> findAll(){
+    public List<clienteModel> findAll(){
         return this.clienteRepository.findAll();
     }
 
 
 //metodo para actualizar o cargar
-    public Clientes update(Clientes client, Long id) throws ResourceNotFoundException {
-        Optional<Clientes> clientBD = this.clienteRepository.findById(id);
+    public clienteModel update(clienteModel client, Long id) throws ResourceNotFoundException {
+        Optional<clienteModel> clientBD = this.clienteRepository.findById(id);
         if (clientBD.isPresent()){
-            Clientes c = clientBD.get();
+            clienteModel c = clientBD.get();
             c.setApellido(client.getApellido());
             c.setNombre(client.getNombre());
             c.setDni(client.getDni()); 
