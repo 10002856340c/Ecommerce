@@ -6,7 +6,6 @@ package com.deg.clientservice.controller;
 
 import com.deg.clientservice.controller.Exceptions.ResourceNotFoundException;
 import com.deg.clientservice.model.VentaModel;
-import com.deg.clientservice.model.VentaModel.venta;
 import com.deg.clientservice.service.VentaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,7 @@ public class VentaController {
 
 
     @PostMapping("/")
-    public ResponseEntity<VentaModel> create(@RequestBody venta){
+    public ResponseEntity<VentaModel> create(@RequestBody VentaModel venta){
         return new ResponseEntity<>(this.ventaService.create(venta, HttpStatus.OK);
     }
 

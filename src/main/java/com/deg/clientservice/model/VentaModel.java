@@ -12,13 +12,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
 
-
-
-    
 @Data
 @Entity
 @Table(name = "venta")
-public class VentaModel {
+public class VentaModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +23,6 @@ public class VentaModel {
     private Long id;
     private LocalDate fecha_alta ;
     private double total;
-
    @ManyToOne
     @JoinColumn(name = "id")
     private clienteModel cliente_id;
@@ -35,3 +31,6 @@ public class VentaModel {
   
 }
 
+
+
+    
