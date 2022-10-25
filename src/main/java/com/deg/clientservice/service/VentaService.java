@@ -29,7 +29,7 @@ public class VentaService {
         Optional<VentaModel> clientBD = this.ventaRepository.findById(id);
         if (clientBD.isPresent()){
             VentaModel c = clientBD.get();
-            
+            return c;
         }else{
             throw new ResourceNotFoundException("La venta no existe");
         }

@@ -13,12 +13,12 @@ import javax.persistence.Table;
 import lombok.Data;
 
 
-public class VentaModel {
+
     
 @Data
 @Entity
 @Table(name = "venta")
-public class venta {
+public class VentaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +34,4 @@ public class venta {
     
   
 }
-}
+
