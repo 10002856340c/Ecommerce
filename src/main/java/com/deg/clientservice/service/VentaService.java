@@ -29,6 +29,9 @@ public class VentaService {
         Optional<VentaModel> clientBD = this.ventaRepository.findById(id);
         if (clientBD.isPresent()){
             VentaModel c = clientBD.get();
+       c.setCliente_id(client.getCliente_id());
+       c.setFecha_alta(client.getFecha_alta());
+       c.setTotal(client.getTotal());
             return c;
         }else{
             throw new ResourceNotFoundException("La venta no existe");
